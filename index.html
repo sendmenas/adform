@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script>
+		var CLASSES = {};
+	</script>
+	<script src="QueueHandler.js"></script>
+	<script src="Main.js"></script>
+	<script src="script.js"></script>
+	<script>
+		window.onload = () => {
+			var Main = CLASSES['Main'];
+			var main = new Main();
+			main.getData();
+		}
+	</script>
+</head>
+<body class="page">
+	<button class="page__button" onClick="makeRequests()">MAKE REQUESTS</button>
+    <div class="page__loader" id="spinner">
+      <div class="buble1"></div>
+      <div class="buble2"></div>
+      <div class="buble3"></div>
+      <div class="buble4"></div>
+      <div class="buble5"></div>
+      <div class="buble6"></div>
+      <div class="buble7"></div>
+      <div class="buble8"></div>
+    </div>
+	<section class="page__section" id="container"></section>
+</body>
+</html>

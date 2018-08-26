@@ -1,0 +1,134 @@
+.page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page__button {
+  margin-bottom: 10px;
+}
+
+.page__section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page__section > div {
+  border: 1px solid black;
+  display: flex;
+  height: 20px;
+  padding: 3px;
+  width: 250px;
+}
+
+.page__loader {
+  height: 50px;
+  position: absolute;
+  top: 50vh;
+  width: 50px;
+}
+
+.buble1 {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+.buble2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.buble3 {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+}
+.buble4 {
+    position: absolute;
+    top: 30px;
+    left: 10px;  
+}
+.buble5 {
+    position: absolute;
+    top: 35px;
+    left: 20px;  
+}
+.buble6 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.buble7 {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+}
+.buble8 {
+    position: absolute;
+    top: 10px;
+    left: 30px;  
+}
+
+.page__loader div {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #D91E36; 
+}
+
+.page__loader div:nth-child(1) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0s; 
+}
+
+.page__loader div:nth-child(2) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.1s; 
+}
+
+.page__loader div:nth-child(3) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.2s; 
+}
+
+.page__loader div:nth-child(4) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.3s; 
+}
+
+.page__loader div:nth-child(5) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.4s; 
+}
+
+.page__loader div:nth-child(6) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.5s; 
+}
+
+.page__loader div:nth-child(7) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.6s; 
+}
+
+.page__loader div:nth-child(8) {
+  transform: scale(0.5);
+  animation: bubbles 0.8s linear infinite 0.7s; 
+}
+
+@keyframes bubbles {
+  0% {
+    transform: scale(0.5);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
