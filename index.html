@@ -3,22 +3,25 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css.css">
+	<!-- setup -->
 	<script>
+		// Global map for classes
 		var CLASSES = {};
 	</script>
 	<script src="QueueHandler.js"></script>
 	<script src="Main.js"></script>
-	<script src="script.js"></script>
 	<script>
+		const Main = CLASSES['Main'];
+		const QueueHandlerClass = CLASSES['QueueHandler'];
+		const queue = new QueueHandlerClass();
 		window.onload = () => {
-			var Main = CLASSES['Main'];
-			var main = new Main();
+			const main = new Main(queue);
 			main.getData();
 		}
 	</script>
 </head>
 <body class="page">
-	<button class="page__button" onClick="makeRequests()">MAKE REQUESTS</button>
+	<button class="page__button" id="button">MAKE REQUESTS</button>
     <div class="page__loader" id="spinner">
       <div class="buble1"></div>
       <div class="buble2"></div>

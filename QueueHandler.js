@@ -1,10 +1,19 @@
 (function() {
+	/**
+	* @constructor
+	*/
 	const QueueHandler = window.CLASSES.QueueHandler = function() {
 		this.queue = [];
 		this.runningRequest = 0;
 	}
 
-	QueueHandler.prototype.addToQueue = function(method, url, priority) {
+	/**
+	* Add request to queue
+	* @param {String} method - request method (POST, GET etc.)
+	* @param {String} url - request url address
+	* @param {Int} priority - request priority
+	*/
+	QueueHandler.prototype.addToQueue = function(method, url, priority = 0) {
 		if (this.runningRequest < 5) {
 			this.makeCall(method, url);
 		} else {
@@ -26,6 +35,9 @@
 		}
 	}
 
+	/**
+	* Check for pending request in queue
+	*/
 	QueueHandler.prototype.checkQueue = function() {
 		if (this.queue.length > 0) {
 			let props = this.queue[0];
@@ -34,6 +46,11 @@
 		}
 	}
 
+	/**
+	* Make request to url
+	* @param {String} method - request method (POST, GET etc.)
+	* @param {String} url - request url address
+	*/
 	QueueHandler.prototype.makeCall = function(method, url) {
 		const xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = () => {
