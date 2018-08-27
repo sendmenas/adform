@@ -36,7 +36,7 @@
 			}
 		};
 		xhttp.open("GET", this.dataUrl, true);
-		// xhttp.send();
+		xhttp.send();
 	};
 
 	/**
