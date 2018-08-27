@@ -1,14 +1,16 @@
 (function() {
 	/**
 	* @constructor
+	* @param {Object} queue - queue handler class
 	*/
-	const Main = window.CLASSES.Main = function() {
+	const Main = window.CLASSES.Main = function(queue) {
+		this._queue = queue;
 		this.cityArr = [];
 		this.dataUrl = 'https://raw.githubusercontent.com/zemirco/sf-city-lots-json/master/citylots.json';
 		this.streetsContainer = document.getElementById('container');
 		this.loader = document.getElementById('spinner');
 		this.button = document.getElementById('button');
-		this.button.addEventListener('click', this.makeRequests);
+		this.button.addEventListener('click', this.makeRequests.bind(this));
 	};
 
 	/**
@@ -34,7 +36,7 @@
 			}
 		};
 		xhttp.open("GET", this.dataUrl, true);
-		xhttp.send();
+		// xhttp.send();
 	};
 
 	/**
@@ -42,16 +44,15 @@
 	*/
 	Main.prototype.makeRequests = function(e) {
 		const requestTestUrl = 'https://www.w3schools.com/js/demo_get2.asp?';
-		const queue = new window.CLASSES.QueueHandler();
 		for (let i = 1; i <= 100; i++) {
 			if (i == 6) {
-				queue.addToQueue('GET', requestTestUrl + 'fname=priority&lname=1', 1);
+				this._queue.addToQueue('GET', requestTestUrl + 'fname=priority&lname=1', 1);
 			} else if (i == 7) {
-				queue.addToQueue('GET', requestTestUrl + 'fname=priority&lname=2', 2);
+				this._queue.addToQueue('GET', requestTestUrl + 'fname=priority&lname=2', 2);
 			} else if (i == 8) {
-				queue.addToQueue('GET', requestTestUrl + 'fname=priority&lname=3', 3);
+				this._queue.addToQueue('GET', requestTestUrl + 'fname=priority&lname=3', 3);
 			} else {
-				queue.addToQueue('GET', requestTestUrl + 'fname=Henry&lname=Ford');
+				this._queue.addToQueue('GET', requestTestUrl + 'fname=Henry&lname=Ford');
 			}			
 		}
 	};

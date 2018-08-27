@@ -12,8 +12,10 @@
 	<script src="Main.js"></script>
 	<script>
 		const Main = CLASSES['Main'];
+		const QueueHandlerClass = CLASSES['QueueHandler'];
+		const queue = new QueueHandlerClass();
 		window.onload = () => {
-			const main = new Main();
+			const main = new Main(queue);
 			main.getData();
 		}
 	</script>
