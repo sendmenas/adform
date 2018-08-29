@@ -10,7 +10,8 @@
 		this.streetsContainer = document.getElementById('container');
 		this.loader = document.getElementById('spinner');
 		this.button = document.getElementById('button');
-		this.button.addEventListener('click', this.makeRequests.bind(this));
+		// this.button.addEventListener('click', this.makeRequests.bind(this));
+		this.button.addEventListener('click', () => this.makeRequests());
 	};
 
 	/**
@@ -42,7 +43,7 @@
 	/**
 	* Make 100 request (some with different priority)
 	*/
-	Main.prototype.makeRequests = function(e) {
+	Main.prototype.makeRequests = function() {
 		const requestTestUrl = 'https://www.w3schools.com/js/demo_get2.asp?';
 		for (let i = 1; i <= 100; i++) {
 			if (i == 6) {
